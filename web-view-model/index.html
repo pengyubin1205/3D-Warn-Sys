@@ -65,8 +65,10 @@
         function render() {
             renderer.render(scene,camera) 
             boxmesh.rotateY(0.01)
+            requestAnimationFrame(render)//使用浏览器为动画设计的函数，请求再次执行render函数
         }
-        setInterval(render,20)
+        render()
+        // setInterval(render,20)
     }
     //js脚本加载完成后立即执行的操作
     window.onload = init;
